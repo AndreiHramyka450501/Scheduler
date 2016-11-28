@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>798</width>
-    <height>610</height>
+    <width>801</width>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,8 +27,8 @@
    <widget class="QPushButton" name="pushButtonAdd">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>50</y>
+      <x>290</x>
+      <y>20</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -40,8 +40,8 @@
    <widget class="QPushButton" name="pushButtonDelete">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>90</y>
+      <x>290</x>
+      <y>60</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -59,12 +59,21 @@
       <height>321</height>
      </rect>
     </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <property name="showGrid">
+     <bool>false</bool>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButtonNotify">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>130</y>
+      <x>290</x>
+      <y>100</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -79,7 +88,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>798</width>
+     <width>801</width>
      <height>21</height>
     </rect>
    </property>

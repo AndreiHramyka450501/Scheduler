@@ -6,121 +6,102 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>581</width>
-    <height>463</height>
+    <width>502</width>
+    <height>310</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>160</y>
-     <width>69</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="currentText">
-    <string>Другое...</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>Другое...</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Семья</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Работа</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Учёба</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Покупки</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Праздники</string>
-    </property>
-   </item>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>390</y>
-     <width>158</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_3">
-    <item>
-     <widget class="QPushButton" name="pushButtonOK">
-      <property name="text">
-       <string>ОК</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButtonCancel">
-      <property name="text">
-       <string>Отмена</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>160</y>
-     <width>282</width>
-     <height>52</height>
+     <x>20</x>
+     <y>20</y>
+     <width>463</width>
+     <height>272</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLineEdit" name="lineEdit"/>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <widget class="QLabel" name="labelCategory">
+        <property name="text">
+         <string>Категория:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <property name="currentText">
+         <string>Другое...</string>
+        </property>
         <item>
-         <widget class="QLabel" name="labelDate">
-          <property name="text">
-           <string>Дата:</string>
-          </property>
-         </widget>
+         <property name="text">
+          <string>Другое...</string>
+         </property>
         </item>
         <item>
-         <widget class="QDateEdit" name="dateEdit">
-          <property name="minimumDate">
-           <date>
-            <year>1903</year>
-            <month>1</month>
-            <day>1</day>
-           </date>
-          </property>
-          <property name="displayFormat">
-           <string>dd.MM.yyyy</string>
-          </property>
-         </widget>
+         <property name="text">
+          <string>Семья</string>
+         </property>
         </item>
-       </layout>
+        <item>
+         <property name="text">
+          <string>Работа</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Учёба</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Покупки</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Праздники</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelDate">
+        <property name="text">
+         <string>Дата:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateEdit" name="dateEdit">
+        <property name="minimumDate">
+         <date>
+          <year>1903</year>
+          <month>1</month>
+          <day>1</day>
+         </date>
+        </property>
+        <property name="displayFormat">
+         <string>dd.MM.yyyy</string>
+        </property>
+       </widget>
       </item>
       <item>
        <spacer name="horizontalSpacer">
@@ -136,26 +117,60 @@
        </spacer>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="labeltime">
-          <property name="text">
-           <string>Время:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QTimeEdit" name="timeEdit"/>
-        </item>
-       </layout>
+       <widget class="QLabel" name="labelTime">
+        <property name="text">
+         <string>Время:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTimeEdit" name="timeEdit"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelPlan">
+      <property name="text">
+       <string>Событие:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textPlan"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>278</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonOK">
+        <property name="text">
+         <string>ОК</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonCancel">
+        <property name="text">
+         <string>Отмена</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
    </layout>
   </widget>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>comboBox</zorder>
  </widget>
  <resources/>
  <connections/>

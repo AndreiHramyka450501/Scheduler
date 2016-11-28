@@ -5,6 +5,9 @@
 #include <QDialog>
 #include <QTimer>
 #include <QDateTime>
+#include <QtSql>
+#include <QDebug>
+#include <QFileInfo>
 #include "addwindow.h"
 #include "notifywindow.h"
 
@@ -22,21 +25,29 @@ public:
 
 public slots:
     void timeUpdate();
+    void connOpen();
+    void connClose();
+    void tableUpdate(QString date);
 
 private slots:
     void on_menuExit_triggered();
-
     void on_menuAdd_triggered();
-
     void on_pushButtonAdd_clicked();
-
     void on_pushButtonNotify_clicked();
-
     void on_menuNotify_triggered();
+    void on_calendarWidget_clicked(const QDate &date);
 
 private:
     Ui::MainWindow *ui;
+    QDate selectedDate;
+    QString dateFormat1;
     QTimer *timer;
+    QSqlDatabase mydb;
+    QSqlQuery *qry;
+    QSqlQueryModel *mod;
+    QSortFilterProxyModel *tab;
+    bool calendarClicked;
+
 };
 
 #endif // MAINWINDOW_H
