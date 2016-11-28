@@ -37,10 +37,15 @@ private slots:
     void on_menuNotify_triggered();
     void on_calendarWidget_clicked(const QDate &date);
 
+    void on_tableView_clicked(const QModelIndex &index);
+
+    void on_pushButtonDelete_clicked();
+
 private:
     Ui::MainWindow *ui;
     QDate selectedDate;
     QString dateFormat1;
+    QString clPlan;
     QTimer *timer;
     QSqlDatabase mydb;
     QSqlQuery *qry;

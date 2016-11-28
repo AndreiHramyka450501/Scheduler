@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent) :
     dateFormat1 = "dd.MM.yyyy";
     selectedDate = QDate::currentDate();
 
+    ui->pushButtonDelete->setDisabled(true);
+
     mod = new QSqlQueryModel;
     tab = new QSortFilterProxyModel;
     calendarClicked = false;
@@ -106,4 +108,20 @@ void MainWindow::on_calendarWidget_clicked(const QDate &date)
     selectedDate = date;
     calendarClicked = true;
     tableUpdate(selectedDate.toString(dateFormat1));
+}
+
+void MainWindow::on_tableView_clicked(const QModelIndex &index)
+{
+    clPlan = ui->tableView->model()->data(index).toString();
+    ui->label->setText(clPlan);
+    ui->pushButtonDelete->setDisabled(false);
+}
+
+void MainWindow::on_pushButtonDelete_clicked()
+{
+    QSqlQuery qry;
+    qry.prepare("delete from plans where Событие='"+clPlan+"'");
+    qry.exec();
+    tableUpdate(selectedDate.toString(dateFormat1));
+    ui->pushButtonDelete->setDisabled(true);
 }
