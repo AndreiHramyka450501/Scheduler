@@ -43,6 +43,8 @@ private slots:
 
     void on_actionDelete_triggered();
 
+    void on_actionToday_triggered();
+
 private:
     Ui::MainWindow *ui;
     QDate selectedDate;
@@ -53,7 +55,6 @@ private:
     QSqlQuery *qry;
     QSqlQueryModel *mod;
     QSortFilterProxyModel *tab;
-    bool calendarClicked;
 
 };
 

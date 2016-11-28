@@ -21,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     mod = new QSqlQueryModel;
     tab = new QSortFilterProxyModel;
-    calendarClicked = false;
 
     connOpen();
     tableUpdate(selectedDate.toString(dateFormat1));
@@ -107,7 +106,6 @@ void MainWindow::tableUpdate(QString date)
 void MainWindow::on_calendarWidget_clicked(const QDate &date)
 {
     selectedDate = date;
-    calendarClicked = true;
     tableUpdate(selectedDate.toString(dateFormat1));
 }
 
@@ -133,3 +131,10 @@ void MainWindow::on_pushButtonDelete_clicked()
     on_actionDelete_triggered();
 }
 
+
+void MainWindow::on_actionToday_triggered()
+{
+    selectedDate = QDate::currentDate();
+    ui->calendarWidget->setSelectedDate(selectedDate);
+    tableUpdate(selectedDate.toString(dateFormat1));
+}
