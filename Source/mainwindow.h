@@ -41,6 +41,8 @@ private slots:
 
     void on_pushButtonDelete_clicked();
 
+    void on_actionDelete_triggered();
+
 private:
     Ui::MainWindow *ui;
     QDate selectedDate;
