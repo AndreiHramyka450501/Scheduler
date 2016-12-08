@@ -29,7 +29,7 @@
      <rect>
       <x>290</x>
       <y>20</y>
-      <width>75</width>
+      <width>81</width>
       <height>23</height>
      </rect>
     </property>
@@ -42,7 +42,7 @@
      <rect>
       <x>290</x>
       <y>60</y>
-      <width>75</width>
+      <width>81</width>
       <height>23</height>
      </rect>
     </property>
@@ -83,7 +83,7 @@
      <rect>
       <x>290</x>
       <y>100</y>
-      <width>75</width>
+      <width>81</width>
       <height>23</height>
      </rect>
     </property>
@@ -124,6 +124,7 @@
       <string>Перейти к..</string>
      </property>
      <addaction name="actionToday"/>
+     <addaction name="actionTomorrow"/>
     </widget>
     <addaction name="menuNotify"/>
     <addaction name="menu_4"/>
@@ -168,6 +169,11 @@
   <action name="actionToday">
    <property name="text">
     <string>Сегодня</string>
+   </property>
+  </action>
+  <action name="actionTomorrow">
+   <property name="text">
+    <string>Завтра</string>
    </property>
   </action>
  </widget>

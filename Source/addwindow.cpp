@@ -6,14 +6,13 @@ addWindow::addWindow(QDate &startDate,QWidget *parent) :
     ui(new Ui::addWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Добавление события");
+    this->setWindowTitle("Добавление события");                 //Изменение названия окна
 
-    ui->dateEdit->setDate(startDate);
+    ui->dateEdit->setDate(startDate);                           //Установка начальной даты
     ui->dateEdit->setCalendarPopup(true);
-    ui->timeEdit->setTime(QTime::currentTime());
+    ui->timeEdit->setTime(QTime::currentTime());                //Установка начального времени
 
-    ui->pushButtonOK->setDisabled(true);
-
+    ui->pushButtonOK->setDisabled(true);                        //"Выключение" кнопки "ОК"
 }
 
 addWindow::~addWindow()
@@ -21,35 +20,35 @@ addWindow::~addWindow()
     delete ui;
 }
 
-void addWindow::on_pushButtonCancel_clicked()
+void addWindow::on_pushButtonCancel_clicked()                   //Действие кнопки "Отмена":
 {
-    close();
+    close();                                                        //закрыть окно добавления события
 }
 
-void addWindow::on_textPlan_textChanged()
+void addWindow::on_textPlan_textChanged()                       //Действия при изменении текста события
 {
-    if (ui->textPlan->toPlainText() != "")
+    if (ui->textPlan->toPlainText() != "")                          //если не поле пустое
     {
-        plan = ui->textPlan->toPlainText();
-        ui->pushButtonOK->setDisabled(false);
-    } else
+        plan = ui->textPlan->toPlainText();                             //занести текст поля в строку plan
+        ui->pushButtonOK->setDisabled(false);                           //"включить" кнопку "ОК"
+    } else                                                          //если поле пустое
     {
-        ui->pushButtonOK->setDisabled(true);
+        ui->pushButtonOK->setDisabled(true);                            //"выключить" кнопку "ОК"
     }
 }
 
-void addWindow::on_pushButtonOK_clicked()
+void addWindow::on_pushButtonOK_clicked()                       //Действие кнопки "ОК":
 {
-    date = ui->dateEdit->date().toString("dd.MM.yyyy");
+    date = ui->dateEdit->date().toString("dd.MM.yyyy");             //запомнить дату, время, категорию события
     time = ui->timeEdit->time().toString("hh:mm");
     category = ui->comboBox->currentText();
 
-    MainWindow c;
-    QSqlQuery qry;
+    MainWindow c;                                                   //создать экземпляр главного окна приложения
+    QSqlQuery qry;                                                  //занести в базу данных новую запись (событие)
     qry.prepare("insert into plans (Дата,Время,Событие,Категория) values ('"+date+"','"+time+"','"+plan+"','"+category+"')");
     qry.exec();
     c.close();
 
     ui->textPlan->setText("");
-    close();
+    close();                                                        //закрыть окно добавления события
 }

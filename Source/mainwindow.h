@@ -36,25 +36,20 @@ private slots:
     void on_pushButtonNotify_clicked();
     void on_menuNotify_triggered();
     void on_calendarWidget_clicked(const QDate &date);
-
     void on_tableView_clicked(const QModelIndex &index);
-
     void on_pushButtonDelete_clicked();
-
     void on_actionDelete_triggered();
-
     void on_actionToday_triggered();
+    void on_actionTomorrow_triggered();
 
 private:
     Ui::MainWindow *ui;
     QDate selectedDate;
-    QString dateFormat1;
-    QString clPlan;
+    QString dateFormat1,clPlan,clDate,clTime;
     QTimer *timer;
     QSqlDatabase mydb;
     QSqlQuery *qry;
     QSqlQueryModel *mod;
-    QSortFilterProxyModel *tab;
 
 };
 
